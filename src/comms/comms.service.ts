@@ -14,7 +14,7 @@ export class CommsService {
   }
 
   getNextDelivery(userId: string): NextDeliveryResponse {
-    const user = this.users.find(u => u.id === userId);
+    const user = this.users.find((u) => u.id === userId);
     if (!user) {
       throw new NotFoundException('User not found');
     }
