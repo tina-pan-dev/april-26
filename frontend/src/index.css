@@ -1,69 +1,137 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  background: #f4f4f4;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: #f4f4f4;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+}
+
+.delivery-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  width: min(100%, 760px);
+  background: #fff;
+  border: 1px solid #cfcfcf;
+}
+
+.image-wrap {
+  min-height: 245px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.image-wrap img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.content {
+  position: relative;
+  padding: 46px 40px 30px;
+}
+
+.gift-ribbon {
+  position: absolute;
+  top: -16px;
+  right: -14px;
+  transform: rotate(8deg);
+  background: #f5a5eb;
+  color: #4a1550;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 18px;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  margin: 0 0 10px;
+  color: #178000;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.message {
+  max-width: 360px;
+  margin: 0 0 22px;
+  color: #555;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.price {
+  margin: 0 0 48px;
+  color: #333;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  gap: 18px;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  height: 34px;
+  border-radius: 3px;
+  padding: 0 36px;
+  font-size: 12px;
+  font-weight: 700;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.primary {
+  border: 1px solid #1f7f12;
+  background: #238514;
+  color: white;
+}
+
+.secondary {
+  border: 1px solid #1f7f12;
+  background: white;
+  color: #1f7f12;
+}
+
+@media (max-width: 700px) {
+  .delivery-card {
+    grid-template-columns: 1fr;
   }
-  a:hover {
-    color: #747bff;
+
+  .content {
+    padding: 36px 24px 28px;
   }
+
+  .actions {
+    flex-direction: column;
+  }
+
   button {
-    background-color: #f9f9f9;
+    width: 100%;
+  }
+
+  .gift-ribbon {
+    right: 16px;
   }
 }

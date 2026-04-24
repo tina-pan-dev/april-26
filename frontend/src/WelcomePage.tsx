@@ -64,24 +64,28 @@ function WelcomePage() {
   console.log('hello');
 
   return (
-    <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto' }}>
-      <h1>{data.title}</h1>
-      <p>{data.message}</p>
-      <p>
-        <strong>Total Price:</strong> £{data.totalPrice.toFixed(2)}
-      </p>
-      {data.freeGift && (
-        <p>
-          <strong>🎉 You qualify for a free gift!</strong>
-        </p>
-      )}
-      {catImage && (
-        <img
-          src={catImage}
-          alt="A cute cat"
-          style={{ maxWidth: '300px', marginTop: '20px' }}
-        />
-      )}
+    <div className="page">
+      <section className="delivery-card">
+        <div className="image-wrap">
+          {catImage && <img src={catImage} alt="A cute cat" />}
+        </div>
+
+        <div className="content">
+          {data.freeGift && <div className="gift-ribbon">FREE GIFT</div>}
+
+          <h1>{data.title}</h1>
+          <p className="message">{data.message}</p>
+
+          <p className="price">
+            <strong>Total price:</strong> £{data.totalPrice.toFixed(2)}
+          </p>
+
+          <div className="actions">
+            <button className="primary">SEE DETAILS</button>
+            <button className="secondary">EDIT DELIVERY</button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
