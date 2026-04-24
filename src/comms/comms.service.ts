@@ -13,7 +13,7 @@ export class CommsService {
   private users: User[];
 
   constructor() {
-    const dataPath = path.join(__dirname, '../../data.json');
+    const dataPath = path.join(process.cwd(), 'data.json');
     const data = fs.readFileSync(dataPath, 'utf-8');
     this.users = JSON.parse(data);
   }
