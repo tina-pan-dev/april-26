@@ -12,7 +12,7 @@ This project implements a simple backend API and frontend UI for generating pers
 ## Backend
 
 Endpoint:
-GET /comms/your-next-delivery/:userId
+GET `/comms/your-next-delivery/:userId`
 
 Returns:
 
@@ -43,7 +43,7 @@ Structure:
 ## Frontend
 
 Route:
-/welcome/:userId
+`/welcome/:userId`
 
 Behaviour:
 
@@ -56,17 +56,20 @@ Behaviour:
 ## Running the Project
 
 Backend:
-cd backend
+```cd backend
 yarn install
 yarn start
+```
 
 Runs on:
 http://localhost:8080
 
 Frontend:
+```
 cd frontend
 npm install
 npm run dev
+````
 
 Runs on:
 http://localhost:3000
