@@ -67,8 +67,8 @@ http://localhost:8080
 Frontend:
 ```
 cd frontend
-npm install
-npm run dev
+yarn install
+yarn start
 ````
 
 Runs on:
